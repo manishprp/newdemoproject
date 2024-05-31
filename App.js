@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import AppButton from './app/components/AppButton';
-import AppText from './app/components/AppText';
-import AppTextInput from './app/components/AppTextInput';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Screen } from './app/components';
+import LoginScreen from './app/screens/LoginScreen';
 
 
 function App(props) {
@@ -12,17 +10,10 @@ function App(props) {
     SplashScreen?.hide()
   },[]);
   return (
-    <SafeAreaView>
-  <MaterialCommunityIcons
-     name="home"
-     size={40}
-        />
-      <AppTextInput placeholder={'Hello'} suffixIcon={'home'}/>
-    </SafeAreaView>
+<Screen>
+<LoginScreen/>
+</Screen>
   );
 }
 
-const styles = StyleSheet.create({
-container:{}
-})
 export default App;
