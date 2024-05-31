@@ -5,8 +5,8 @@ import {
 } from '@react-navigation/drawer';
 import {logout} from '../auth/Authenticate';
 import {strings} from '../config';
-import ProductsList from '../screen/ProductsList';
-import SearchScreen from '../screen/SearchScreen';
+import ProductsList from '../screens/ProductsList';
+import SearchScreen from '../screens/SearchScreen';
 
 const Drawer = createDrawerNavigator();
 

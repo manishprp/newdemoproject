@@ -12,20 +12,34 @@ import {
   Text,
   AppForm,
 } from '../components';
-import {alreadyLoggedIn, loginNormal} from '../auth/Authenticate';
 import {assets, color, strings} from '../config';
-import {login} from '../auth/login';
+import {
+  alreadyLoggedIn,
+  loginNormal,
+  loginWithGoogle,
+} from '../auth/Authenticate';
 
 function LoginScreen({navigation}) {
+  const _alreadyLoggedIn = async () => {
+    const ans = await alreadyLoggedIn();
+    if (ans) {
+      navigation.navigate(strings.DASHBOARD);
+    }
+  };
+
+  useEffect(() => {
+    _alreadyLoggedIn();
+  }, []);
+
   let userSchema = object({
     password: string().required('Password is required').label('Password'),
     username: string().required('Username is required').label('Username'),
   });
 
   const _handleSubmit = async credentials => {
-    const ans = await login(credentials);
-    if (ans.success) {
-      console.log('Loggedin success'); // here we navigate to the dashboard
+    const res = await loginNormal({...credentials});
+    if (res.success) {
+      navigation.navigate(strings.DASHBOARD);
     }
   };
 
