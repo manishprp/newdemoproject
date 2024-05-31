@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import AppButton from './app/components/AppButton';
+import AppText from './app/components/AppText';
+import AppTextInput from './app/components/AppTextInput';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 function App(props) {
   useEffect(()=>{
@@ -8,7 +13,11 @@ function App(props) {
   },[]);
   return (
     <SafeAreaView>
-    <View style={styles.container}><Text style={{fontSize:20}}>Is Sansaar ko mera pranaam</Text></View>
+  <MaterialCommunityIcons
+     name="home"
+     size={40}
+        />
+      <AppTextInput placeholder={'Hello'} suffixIcon={'home'}/>
     </SafeAreaView>
   );
 }
