@@ -8,11 +8,13 @@ const endpoint = 'auth/login';
 const login = async credentials => {
   let answer = ResponseObject();
   try {
+    console.log(credentials, 'ye hi creds');
     const response = await apiClient.post(
       endpoint,
       JSON.stringify(credentials),
     );
     const token = response?.data?.token;
+    console.log('token aaya', token);
     if (token) {
       answer = await StoreValue('token', token, true);
     } else {

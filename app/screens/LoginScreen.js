@@ -12,7 +12,9 @@ import {
   Text,
   AppForm,
 } from '../components';
+import {alreadyLoggedIn, loginNormal} from '../auth/Authenticate';
 import {assets, color, strings} from '../config';
+import {login} from '../auth/login';
 
 function LoginScreen({navigation}) {
   let userSchema = object({
@@ -21,7 +23,9 @@ function LoginScreen({navigation}) {
   });
 
   const _handleSubmit = async credentials => {
-    if (res.success) {
+    const ans = await login(credentials);
+    if (ans.success) {
+      console.log('Loggedin success'); // here we navigate to the dashboard
     }
   };
 

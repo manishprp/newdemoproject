@@ -1,19 +1,12 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import { Screen } from './app/components';
 import LoginScreen from './app/screens/LoginScreen';
 
-
 function App(props) {
-  useEffect(()=>{
-    SplashScreen?.hide()
-  },[]);
-  return (
-<Screen>
-<LoginScreen/>
-</Screen>
-  );
+  useEffect(() => {
+    SplashScreen?.hide();
+  }, []);
+  return <LoginScreen />;
 }
 
 export default App;

@@ -10,3 +10,4 @@ export {default as AppForm} from './AppFormComponents/AppForm';
 export {default as SubmitButtom} from './AppFormComponents/AppSubmitButton';
 export {default as CardItem} from './CardItem';
 export {default as SearchBox} from './SearchBox';
+export {default as AppActivityIndicator} from './AppActivityIndicator';
