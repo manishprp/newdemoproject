@@ -2,6 +2,9 @@ export default appStrings = Object.freeze({
   USERNAME: 'Username',
   PASSWORD: 'Password',
   LOGIN: 'Login',
+  DrawerSCreen: 'DrawerScreen',
+  TabScreen: 'TabScreen',
+
   REGISTER: 'Register',
   PRODUCTSLIST: 'ProductList',
   SEARCHSCREEN: 'SearchScreen',

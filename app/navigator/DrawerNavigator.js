@@ -7,6 +7,7 @@ import {logout} from '../auth/Authenticate';
 import {strings} from '../config';
 import ProductsList from '../screens/ProductsList';
 import SearchScreen from '../screens/SearchScreen';
+import DashBoard from '../screens/DashBoard';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,6 +17,13 @@ function DrawerNavigator() {
       drawerContent={props => {
         return (
           <DrawerContentScrollView {...props}>
+            <DrawerItem
+              label={'Dashboard'}
+              onPress={() => {
+                props.navigation.navigate(strings.PRODUCTSLIST);
+              }}
+            />
+
             <DrawerItem
               label={'Products List'}
               onPress={() => {
@@ -39,6 +47,7 @@ function DrawerNavigator() {
         );
       }}>
       <Drawer.Screen name={strings.PRODUCTSLIST} component={ProductsList} />
+      <Drawer.Screen name={strings.DASHBOARD} component={DashBoard} />
       <Drawer.Screen name={strings.SEARCHSCREEN} component={SearchScreen} />
     </Drawer.Navigator>
   );

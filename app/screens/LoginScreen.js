@@ -23,11 +23,12 @@ function LoginScreen({navigation}) {
   const _alreadyLoggedIn = async () => {
     const ans = await alreadyLoggedIn();
     if (ans) {
-      navigation.navigate(strings.DASHBOARD);
+      navigation.navigate(strings.TabScreen);
     }
   };
 
   useEffect(() => {
+    console.log('UseEffect ran');
     _alreadyLoggedIn();
   }, []);
 
@@ -37,9 +38,10 @@ function LoginScreen({navigation}) {
   });
 
   const _handleSubmit = async credentials => {
+    console.log(credentials);
     const res = await loginNormal({...credentials});
     if (res.success) {
-      navigation.navigate(strings.DASHBOARD);
+      navigation.navigate(strings.TabScreen);
     }
   };
 
@@ -72,7 +74,7 @@ function LoginScreen({navigation}) {
           onPress={async () => {
             const res = await loginWithGoogle();
             if (res.success) {
-              navigation.navigate(strings.DASHBOARD);
+              navigation.navigate(strings.TabScreen);
             }
           }}
         />
